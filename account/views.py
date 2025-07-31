@@ -54,12 +54,12 @@ def login_user(request):
         user = authenticate(username=username, password=password)
 
         if user is None:
-            messages.info(request,'invalid password')
+            messages.info(request,'Invalid Password!')
             return redirect('/auth/login')
         
 
         login(request,user)
-        messages.info(request,'login successful')
+        messages.info(request,'Login successful!')
 
         return redirect('/auth/login')
     
