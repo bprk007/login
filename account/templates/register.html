@@ -18,6 +18,13 @@
         }
         return true;
       }
+
+      function togglePassword() {
+        const pwd = document.getElementById("password");
+        const confirmPwd = document.getElementById("confirmPassword");
+        pwd.type = pwd.type === "password" ? "text" : "password";
+        confirmPwd.type = confirmPwd.type === "password" ? "text" : "password";
+      }
     </script>
   </head>
   <body>
@@ -76,6 +83,17 @@
             placeholder="Re-enter Password"
             required
           />
+        </div>
+
+        <!-- Show password toggle -->
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="showPassword"
+            onclick="togglePassword()"
+          />
+          <label class="form-check-label" for="showPassword">Show Passwords</label>
         </div>
 
         <p>Already have an account? <a href="/auth/login/">Login</a></p>
